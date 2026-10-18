@@ -1,0 +1,33 @@
+{
+  "name": "oqgit",
+  "version": "0.1.0",
+  "description": "Find and download the right file from any GitHub release for this machine.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shashank03-dev/OneCLIQ.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/shashank03-dev/OneCLIQ",
+  "bugs": {
+    "url": "https://github.com/shashank03-dev/OneCLIQ/issues"
+  },
+  "type": "module",
+  "bin": {
+    "oqgit": "dist/oqgit.mjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "github",
+    "releases",
+    "download",
+    "cli"
+  ]
+}

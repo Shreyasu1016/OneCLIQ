@@ -1,0 +1,52 @@
+name: Feature request
+description: Suggest an improvement to the OneCLIQ website, API, or oqgit CLI.
+title: "Feature: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea. Please check existing issues first. Explain the problem you want to solve so others can discuss possible approaches.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part would this improve?
+      options:
+        - Website
+        - API
+        - oqgit CLI
+        - Documentation
+        - More than one area
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe what is difficult today and who it affects.
+      placeholder: When I compare two releases, I cannot easily see which platforms changed.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like OneCLIQ to do?
+      description: Describe the result you want. A detailed technical design is optional.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What have you tried instead? (optional)
+      description: Share any workarounds or other ideas you considered.
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or context (optional)
+      description: Include examples, screenshots, or links that help explain the idea. Do not include secrets.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked for an existing feature request about this idea.
+          required: true

@@ -1,0 +1,55 @@
+{
+  "name": "onecliq",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Find the right release download for your operating system and CPU.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shashank03-dev/OneCLIQ.git"
+  },
+  "homepage": "https://github.com/shashank03-dev/OneCLIQ#readme",
+  "bugs": { "url": "https://github.com/shashank03-dev/OneCLIQ/issues" },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "next build && playwright test",
+    "cli:build": "tsup",
+    "cli:dev": "tsx cli/src/bin.ts",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run cli:build"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.59.0",
+    "motion": "^14.3.0",
+    "next": "16.4.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^1.8.1",
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "picocolors": "^1.1.1",
+    "tailwindcss": "^4",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

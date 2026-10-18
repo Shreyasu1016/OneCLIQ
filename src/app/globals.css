@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* Tokens: see DESIGN.md (“Paper & Night”). */
+:root {
+  --paper: #f4f1ea;
+  --paper-raised: #fbfaf6;
+  --paper-sunk: #ece8de;
+  --ink: #151412;
+  --ink-muted: #5d5a53;
+  --ink-subtle: #8e8a80;
+  --rule: rgb(21 20 18 / 0.09);
+  --rule-strong: rgb(21 20 18 / 0.18);
+  --dot: rgb(21 20 18 / 0.16);
+
+  --night: #0b0b0c;
+  --night-raised: #161618;
+  --night-ink: #f2f0ea;
+  --night-muted: #9c998f;
+  --night-rule: rgb(255 255 255 / 0.1);
+
+  --ember: #e5582b;
+  --dusk: #5b4bdb;
+  --sky: #bfd4ee;
+  --moss: #2f7a4c;
+  --clay: #b8402a;
+  --ochre: #a86a12;
+  --leaf: #9ad48a;
+  --lilac: #aca1f4;
+
+  /* DesignPass components read these. */
+  --dp-accent: var(--ink);
+  --dp-accent-contrast: var(--paper);
+
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-paper-sunk: var(--paper-sunk);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-night: var(--night);
+  --color-night-raised: var(--night-raised);
+  --color-night-ink: var(--night-ink);
+  --color-night-muted: var(--night-muted);
+  --color-night-rule: var(--night-rule);
+  --color-ember: var(--ember);
+  --color-dusk: var(--dusk);
+  --color-sky: var(--sky);
+  --color-moss: var(--moss);
+  --color-clay: var(--clay);
+  --color-ochre: var(--ochre);
+  --color-leaf: var(--leaf);
+  --color-lilac: var(--lilac);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-dots: var(--font-doto), var(--font-geist-mono), monospace;
+
+  --shadow-tile: 0 1px 0 rgb(255 255 255 / 0.9) inset, 0 10px 30px -12px rgb(21 20 18 / 0.28), 0 2px 6px -2px rgb(21 20 18 / 0.08);
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.9) inset, 0 30px 60px -30px rgb(21 20 18 / 0.25);
+
+  --animate-bob: bob 7s ease-in-out infinite;
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-dash: dash 2.4s linear infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-6px) rotate(var(--r, 0deg)); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -24; }
+}
+
+html {
+  background: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--ember) 30%, transparent);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Dot grid used on night sections (paper sections use DesignPass SoftPatterns). */
+.bg-dots-night {
+  background-image: radial-gradient(rgb(255 255 255 / 0.16) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+select {
+  appearance: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

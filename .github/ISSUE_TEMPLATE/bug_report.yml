@@ -1,0 +1,71 @@
+name: Bug report
+description: Report something in the OneCLIQ website, API, or oqgit CLI that is not working as expected.
+title: "Bug: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. Please search existing issues first.
+
+        If this could be a security vulnerability, follow [SECURITY.md](../../SECURITY.md) and do not share details in a public issue.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where does the problem happen?
+      options:
+        - Website
+        - API
+        - oqgit CLI
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What went wrong?
+      description: Explain the problem in plain language.
+      placeholder: The resolver chose a Windows file when I selected macOS.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the steps or commands needed to see the problem. Use a public example if possible.
+      placeholder: |
+        1. Open the website or run a command.
+        2. Enter a GitHub repository or release URL.
+        3. Select an operating system and architecture.
+        4. Observe the result.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include what is relevant, such as OS, CPU architecture, browser, Node.js version, or CLI version.
+      placeholder: macOS, arm64, Firefox, Node.js 22
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots (optional)
+      description: Remove tokens, private data, and sensitive paths before posting.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched for an existing issue and removed sensitive information from this report.
+          required: true
